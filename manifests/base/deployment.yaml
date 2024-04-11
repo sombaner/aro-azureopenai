@@ -6,7 +6,7 @@ metadata:
     app: aro-azureopenai
   name: aro-azureopenai
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: aro-azureopenai
