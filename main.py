@@ -23,12 +23,18 @@ openai.log='debug'
 # Load Config
 def load_config():
     config = {
-        "title": os.getenv("title", "Azure OpenAI App running in Azure Red Hat OpenShift"),
-        "description": os.getenv("description", "Azure OpenAI App running in Azure Red Hat OpenShift"),
-        "port": int(os.getenv("port", 8080)),
-        "deployment_name": os.getenv("deployment_name", "gpt35-turbo-default-sb"),
-        "api_type": os.getenv("api_type", "azure"),
-        "api_version": os.getenv("api_version", "2024-02-15-preview")
+        #"title": os.getenv("title", "Azure OpenAI App running in Azure Red Hat OpenShift"),
+         "title": "Azure OpenAI App running in Azure Red Hat OpenShift",
+        #"description": os.getenv("description", "Azure OpenAI App running in Azure Red Hat OpenShift"),
+        "description": "Azure OpenAI App running in Azure Red Hat OpenShift",
+       # "port": int(os.getenv("port", 8080)),
+        "port": "8080",
+        #"deployment_name": os.getenv("deployment_name", "gpt35-turbo-default-sb"),
+        "deployment_name": "gpt35-turbo-default-sb",
+       # "api_type": os.getenv("api_type", "azure"),
+        "api_type": "azure",
+        #"api_version": os.getenv("api_version", "2024-02-15-preview")
+        "api_version": "2024-02-15-preview"
     }
     logging.info(f"Loaded configuration: {config}")
     return config
