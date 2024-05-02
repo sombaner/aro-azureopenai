@@ -75,3 +75,5 @@ spec:
                 secretKeyRef:
                   name: azure-openai
                   key: OPENAI_API_KEY
+      imagePullSecrets:
+        - name: quay-secret    
