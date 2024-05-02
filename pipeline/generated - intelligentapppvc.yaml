@@ -1,0 +1,29 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  annotations:
+    pv.kubernetes.io/bind-completed: 'yes'
+    pv.kubernetes.io/bound-by-controller: 'yes'
+    volume.beta.kubernetes.io/storage-provisioner: disk.csi.azure.com
+    volume.kubernetes.io/storage-provisioner: disk.csi.azure.com
+  name: pvc-openaichat
+  namespace: intelligentapp
+  finalizers:
+    - kubernetes.io/pvc-protection
+  labels:
+    tekton.dev/pipeline: aro-azureopenai-app
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: "pvc-b7fd1e89-36e5-425d-84a3-a2c3e6babff22"
+  storageClassName: managed-csi
+  volumeMode: Filesystem
+status:
+  phase: Bound
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 1Gi

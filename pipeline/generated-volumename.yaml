@@ -1,0 +1,48 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pvc-b7fd1e89-36e5-425d-84a3-a2c3e6babff22
+  uid: 32a99519-9cdc-4259-b0e4-5051d2534d20
+  resourceVersion: '240077'
+  creationTimestamp: '2024-05-01T14:06:09Z'
+  annotations:
+    pv.kubernetes.io/provisioned-by: disk.csi.azure.com
+    volume.kubernetes.io/provisioner-deletion-secret-name: ''
+    volume.kubernetes.io/provisioner-deletion-secret-namespace: ''
+  finalizers:
+    - kubernetes.io/pv-protection
+    - external-attacher/disk-csi-azure-com
+spec:
+  capacity:
+    storage: 1Gi
+  csi:
+    driver: disk.csi.azure.com
+    volumeHandle: >-
+      /subscriptions/16317f4e-9c41-4bda-9966-cf8ef388d82c/resourceGroups/aro-mxb6edfl/providers/Microsoft.Compute/disks/pvc-b7fd1e89-36e5-425d-84a3-a2c3e6babff2
+    fsType: ext4
+    volumeAttributes:
+      csi.storage.k8s.io/pv/name: pvc-b7fd1e89-36e5-425d-84a3-a2c3e6babff22
+      csi.storage.k8s.io/pvc/name: pvc-openaichat
+      csi.storage.k8s.io/pvc/namespace: intelligentapp
+      requestedsizegib: '1'
+      skuname: Premium_LRS
+      storage.kubernetes.io/csiProvisionerIdentity: 1714553296705-8081-disk.csi.azure.com
+  accessModes:
+    - ReadWriteOnce
+  claimRef:
+    kind: PersistentVolumeClaim
+    namespace: intelligentapp
+    name: pvc-openaichat
+    apiVersion: v1
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: managed-csi
+  volumeMode: Filesystem
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: topology.disk.csi.azure.com/zone
+              operator: In
+              values:
+                - eastus-1
+
