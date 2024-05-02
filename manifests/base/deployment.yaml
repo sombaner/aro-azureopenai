@@ -18,7 +18,7 @@ spec:
         app: aro-azureopenai
     spec:
       containers:
-        - image: image-registry.openshift-image-registry.svc:5000/intelligentapp/aro-azureopenai-app 
+        - image: quay.io/sombaner-mobb-apac/aro-azureopenai:latest
           name: aro-azureopenai
           ports:
             - containerPort: 8080
