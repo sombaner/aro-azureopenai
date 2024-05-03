@@ -90,7 +90,7 @@ def run(port):
         logging.info(f"Starting Gradio interface on port {port}...")
         chat_interface = gr.ChatInterface(
             fn=predict, 
-            theme=gr.themes.Glass(),
+            theme=gr.themes.Soft(),
             title=title,
             description=description
         )
