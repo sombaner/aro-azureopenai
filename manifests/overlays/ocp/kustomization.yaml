@@ -7,7 +7,7 @@ resources:
 
 namespace: aro-azureopenai
 images:
-- digest: sha256:33efadc292de68e0516911a38dd6b3905362e7cf60967992654f1013cfca0114
+- digest: sha256:3a4bed273b78891dd05e5ed6b70f15abb5f4bf19574b37ccc8675e4186f99b1f
   name: quay.io/sombaner-mobb-apac/aro-azureopenai:latest
   newName: quay.io/sombaner-mobb-apac/aro-azureopenai
   newTag: latest
