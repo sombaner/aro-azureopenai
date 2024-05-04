@@ -24,8 +24,8 @@ openai.log='debug'
 '''
 def load_config():
     config = {
-        "title": os.getenv("title", "Azure OpenAI App running in Azure Red Hat OpenShift"),
-        "description": os.getenv("description", "Azure OpenAI App running in Azure Red Hat OpenShift"),
+        "title": os.getenv("title", "Azure OpenAI Chatbot App running in Azure Red Hat OpenShift"),
+        "description": os.getenv("description", "Azure OpenAI Chatbot App running in Azure Red Hat OpenShift"),
         "port": int(os.getenv("port", 8080)),
         "deployment_name": os.getenv("deployment_name", "gpt35-turbo-default-sb"),
         "api_type": os.getenv("api_type", "azure"),
@@ -37,8 +37,8 @@ def load_config():
 
 def load_config():
     config = {
-        "title": "Azure OpenAI App running in Azure Red Hat OpenShift",
-        "description": "Azure OpenAI App running in Azure Red Hat OpenShift",
+        "title": "Azure OpenAI Chatbot App running in Azure Red Hat OpenShift",
+        "description": "Azure OpenAI Chatbot App running in Azure Red Hat OpenShift",
         "port": 8080,
         "deployment_name": "gpt35-turbo-default-sb",
         "api_type": "azure",
@@ -114,7 +114,7 @@ if __name__ == "__main__":
         config = load_config()
 
         # Extract configuration variables
-        title = config.get("title", "Azure OpenAI App running in Azure Red Hat OpenShift")
+        title = config.get("title", "Azure OpenAI Chatbot App running in Azure Red Hat OpenShift")
         description = config.get("description", "Created & Maintained by Roberto Carratalá @ Red Hat")
         port = config.get("port", 8080)
         deployment_name = config.get("deployment_name", "gpt-35-turbo")
